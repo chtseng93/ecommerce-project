@@ -1,6 +1,6 @@
 # ecommerce-project
-An e-commerce Application with Spring Boot, RESTful APIs, JWT, Spring Security, React.js and Docker deployed on AWS EC2. (Non co)
-https://goshoppingland.com/
+An e-commerce Application with Spring Boot, RESTful APIs, JWT, Spring Security, React.js and Docker deployed on AWS.
+
 >
 ![image](https://github.com/user-attachments/assets/8351783e-5cf8-4243-999c-5e31c4b614e2)
 ![image](https://github.com/user-attachments/assets/361093ba-9377-4cf1-8bc4-7a2c9f94c00b)
