@@ -58,7 +58,6 @@ public class ProductController{
 	private String clientFilePath;
 
 	@PostMapping("/add/Product")
-    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<ProductRes> addNewProduct(
     		@RequestParam("name") String name,
             @RequestParam("picture") MultipartFile picture,
@@ -112,7 +111,6 @@ public class ProductController{
 
 
 	  @PutMapping("/update/{productId}")
-	  @PreAuthorize("hasRole('ADMIN')")
 	  public ResponseEntity<ProductRes> updateProduct(@PathVariable int productId,
   		  @RequestParam(required = false) String productName,
           @RequestParam(required = false) MultipartFile picture,
