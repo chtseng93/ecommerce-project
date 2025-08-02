@@ -38,7 +38,11 @@ public class SpringSecurityConfig  {
                 .csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/auth/**","/products/get/allProducts","/products/get/productTypes","/products/get/product/**","/users/arole").permitAll()
-                .anyRequest().authenticated()
+                .antMatchers("/orders/get/user-order/**", "/orders/save/order").hasAnyRole("USER", "ADMIN")
+                .antMatchers("/orders/**").hasRole("ADMIN")
+                .antMatchers("/products/add/Product", "/products/update/**").hasRole("ADMIN")
+                .antMatchers("/users/get/user/**").hasAnyRole("USER", "ADMIN")
+                .anyRequest().denyAll()
                 .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and().addFilterBefore(jwtAuthorizationFilter,UsernamePasswordAuthenticationFilter.class);
 
