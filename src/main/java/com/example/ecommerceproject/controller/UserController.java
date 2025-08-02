@@ -42,7 +42,6 @@ public class UserController  {
     }
 	
 	@GetMapping("/get/user/{userId}")
-    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public ResponseEntity<?> getUserByUserId(@PathVariable("userId") int userId){
 		
 		log.info("/get/user/"+userId);
